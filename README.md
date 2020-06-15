@@ -57,6 +57,12 @@ Markdown ist eine aufzeichnungssprache die es vereinfacht, ein Format zu erstell
 Dieses README.md wird mir Markdown bearbeitet. Für die bearbeitung habe ich ein Cheatsheet verwendet von Markdown.
 #### Cheatsheet:
 https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
+
+### Setup
+
+Für das Projekt benötige ich Virtual Box, Vagrant und einen funktionalen Laptop
+
+
 ### Command Sheet
 #### Docker
 
