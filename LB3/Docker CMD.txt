@@ -1,0 +1,106 @@
+Docker Command Legend
+
+Command:				Description:
+
+docker ps -a				List all Containers active & inactive
+
+docker run				create and run docker
+
+docker build .				uses docker image withing directory	
+
+docker pull				pulls docker image from repository
+
+docker run --name jaron container ID	starts docker container with folowing name / ID
+
+docker rm name				kills docker container
+
+docker stop				stops active running container	
+
+docker image ls				lists all docker images
+
+docker run -d -P --name jaron nginx	creates docker container with nginx running
+
+docker-machine ip default		sets ip from container to default
+
+docker ps				lists all active docker container
+
+docker network is			lists all networks
+
+docker network create			create new network
+
+docker network rm			removes network
+
+docker run -i --expose=22 ID		 
+
+docker run -d -P --name cname image	REAL CONTAINER CREATE
+
+docker port CName			show ports used by docker container
+
+docker exec -it CName /bin/bash		enter Docker container and leave with exit
+
+docker-machine ip default		make docker container 
+
+
+docker vuild:: 57175af58ed0
+first port from image second port mapen
+
+-v mape mape /var/tmp:/var_tmp 
+docker run -v -it nginx /bin/bash
+df -k
+
+
+in var_tmp 
+
+pwd
+
+touch jaron
+
+raus und in ls
+	
+
+cat /var_tmp/jaron
+
+
+
+Docker: python rest endpoint implementieren get endpoint aufruft lommt hello world als response
+und ndanachn in docker deployen.
+
+Rest API hello world. wen man endpoint aufruft gibt hello wolrd.
+
+sudo docker run -v /var/tmp:/var_tmp -it nginx /bin/bash ¨
+
+
+Website:	Make direcory
+
+mkdir mysite
+cd mysite
+echo "a new website" > index.html
+docker run -d -P -v $Home/mysite:/usr/share/nginx/html \
+>-- name mysite nginx
+
+
+Container creation for Swiss re edit ports: docker run --name jaron -d -P -p 8080:32771 nginx
+
+
+entyrpoint.sh solution if permission denied: chmod +x entrypoint.sh
+
+
+
+
+
+
+FROM nginx:1.13.2-alpine
+
+COPY html /usr/share/nginx/html
+COPY nginx.conf  /etc/nginx/conf.d/default.conf
+COPY entrypoint.sh /
+
+EXPOSE 8080
+
+ENTRYPOINT ["/entrypoint.sh"]
+CMD ["nginx", "-g", "daemon off;"]
+
+
+
+
+			
