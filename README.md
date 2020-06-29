@@ -66,6 +66,46 @@ Für das Projekt benötige ich Virtual Box, Vagrant und einen funktionalen Lapto
 ### Command Sheet
 #### Docker
 
+> docker ps -a				List all Containers active & inactive
+
+> docker run				create and run docker
+
+> docker build .				uses docker image withing directory	
+
+> docker pull				pulls docker image from repository
+
+> docker run --name jaron container ID	starts docker container with folowing name / ID
+
+> docker rm name				kills docker container
+
+> docker stop				stops active running container	
+
+> docker image ls				lists all docker images
+
+> docker run -d -P --name jaron nginx	creates docker container with nginx running
+
+> docker-machine ip default		sets ip from container to default
+
+> docker ps				lists all active docker container
+
+> docker network is			lists all networks
+
+> docker network create			create new network
+
+> docker network rm			removes network
+
+> docker run -i --expose=22 ID		 
+
+> docker run -d -P --name cname image	REAL CONTAINER CREATE
+
+> docker port CName			show ports used by docker container
+
+> docker exec -it CName /bin/bash		enter Docker container and leave with exit
+
+> docker-machine ip default		make docker container
+
+
+
 #### Vagrant
 > <"vagrant Init">  -->    #Erstellt VM
 
