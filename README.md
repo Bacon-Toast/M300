@@ -62,6 +62,21 @@ https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
 ![](/Images/netzwerkp.PNG)
 Für das Projekt benötige ich Virtual Box, Vagrant und einen funktionalen Laptop
 
+
+#### Reverse-Proxy
+The Reverse Proxy is managed in `/etc/apache2/sites-available/001-reverseproxy.conf`:
+```xml
+# general Proxy settings
+ProxyRequests Off
+<Proxy *>
+      Order deny,allow
+      Allow from all
+</Proxy>
+
+# redirection to IAM
+ProxyPass /iam http://iam	
+ProxyPassReverse /iam http://iam 
+
 ### Test cases
 | Nr. | Description | Check | Should-Situation | Is-Situation | OK? |
 |:-:|-|-|-|-|:-:|
