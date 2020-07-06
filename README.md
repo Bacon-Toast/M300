@@ -77,11 +77,17 @@ ProxyRequests Off
 ProxyPass /iam http://iam	
 ProxyPassReverse /iam http://iam 
 ```
+#### Firewall
+| Server | Firewall Rules |
+|:-:|-|
+| web01 | sudo ufw allow 80/tcp<br>sudo ufw allow 22/tcp |
+| iam01 | sudo ufw allow 22/tcp<br>sudo ufw allow from 192.168.11.101 to any port 80 |
+| db01 | sudo ufw allow 22/tcp<br>sudo ufw allow from 192.168.11.101 to any port 3306 |
 
 ### Test cases
 | Nr. | Description | Check | Soll Stand | Ist Stand | OK? |
 |:-:|-|-|-|-|:-:|
-| 1 | On [web](http://localhost:8080/) anybody should be able to input their name, proposal and press submit.<br>After that the information should be stored in the `proposals/data` on the `db` server. | 1. `mysql -uroot -pS3cr3tp4ssw0rd`<br>2. `use proposals;`<br>3. `SELECT uname, proposal FROM data;` | check if the input values are visible in the list | Input Variables are visible. | Y |
+| 1 | On [web-server](http://localhost:8080/) anybody should be able to input their name, proposal and press submit.<br>After that the information should be stored in the `proposals/data` on the `db` server. | 1. `mysql -uroot -pS3cr3tp4ssw0rd`<br>2. `use proposals;`<br>3. `SELECT uname, proposal FROM data;` | check if the input values are visible in the list | Input Variables are visible. | Y |
 | 2 | `web` should be able to ping `db` on port `3306` | `nc -vz 192.168.11.100 PORT: 3306` | `Connection to 192.168.11.100 PORT: 3306 [tcp/mysql] succeeded!` | `Connection to 192.168.11.100 3306 port [tcp/mysql] succeeded!` | Y |
 | 3 | `db` should NOT be able to ping `iam` on port `80` | `nc -vz 192.168.11.102 PORT: 80` | `nc: connect to 192.168.11.102 PORT: 80 (tcp) failed: Connection timed out` | `nc: connect to 192.168.11.102 port 80 (tcp) failed: Connection timed out` | Y |
 | 4 | Does php LDAP admin work? | Open [localhost:8080/iam/phpldapadmin/](http://localhost:8080/iam/phpldapadmin/) and input the credentials described in the [Overview](#overview) section.<br>After that you should be able to select the `nodomain` domain controller. | Able to select the `nodomain` domain controller. | Able to select the `nodomain` domain controller. | Y |
@@ -90,12 +96,7 @@ ProxyPassReverse /iam http://iam
 | 7 | Check if `Adminer` works | Open [localhost:8080/adminer.php](http://localhost:8080/adminer.php) and input the credentials described in the [Overview](#overview) section.<br>After that you should be presented with the view to select the `data` table. | Presented with the view to select the `data` table. | Presented with the view to select the `data` table. | Y |
 | 8 | `iam` should NOT be able to ping `db` on port `3306` | `nc -vz 192.168.11.100 PORT: 3306` | `nc: connect to 192.168.11.100 PORT: 3306 (tcp) failed: Connection timed out` | `nc: connect to 192.168.11.100 PORT: 3306 (tcp) failed: Connection timed out` | Y |
 
-#### Firewall
-| Server | Firewall Rules |
-|:-:|-|
-| web01 | sudo ufw allow 80/tcp<br>sudo ufw allow 22/tcp |
-| iam01 | sudo ufw allow 22/tcp<br>sudo ufw allow from 192.168.11.101 to any port 80 |
-| db01 | sudo ufw allow 22/tcp<br>sudo ufw allow from 192.168.11.101 to any port 3306 |
+
 
 
 ### Command Sheet
