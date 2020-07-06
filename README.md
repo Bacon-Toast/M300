@@ -75,6 +75,13 @@ Für das Projekt benötige ich Virtual Box, Vagrant und einen funktionalen Lapto
 | 8 | Check if `Adminer` works | Open [localhost:8080/adminer.php](http://localhost:8080/adminer.php) and input the credentials described in the [Overview](#overview) section.<br>After that you should be presented with the view to select the `data` table. | Presented with the view to select the `data` table. | Presented with the view to select the `data` table. | Y |
 | 9 | Check if php LDAP admin works | Open [localhost:8080/iam/phpldapadmin/](http://localhost:8080/iam/phpldapadmin/) and input the credentials described in the [Overview](#overview) section.<br>After that you should be able to select the `nodomain` domain controller. | Able to select the `nodomain` domain controller. | Able to select the `nodomain` domain controller. | Y |
 
+#### Firewall
+| Server | Firewall Rules |
+|:-:|-|
+| web | sudo ufw allow 80/tcp<br>sudo ufw allow 22/tcp |
+| iam | sudo ufw allow 22/tcp<br>sudo ufw allow from 192.168.11.101 to any port 80 |
+| db | sudo ufw allow 22/tcp<br>sudo ufw allow from 192.168.11.101 to any port 3306 |
+
 
 ### Command Sheet
 #### Docker
