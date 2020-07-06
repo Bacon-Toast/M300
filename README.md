@@ -89,12 +89,12 @@ ProxyPassReverse /iam http://iam
 ### Test cases
 | Nr. | Beschreibung | Check | Soll Stand | Ist Stand | OK? |
 |:-:|-|-|-|-|:-:|
-| 1 | `web` should be able to ping `db` on port `3306` | `nc -vz 192.168.11.100 PORT: 3306` | `Connection to 192.168.11.100 PORT: 3306 [tcp/mysql] Failed` | `No Rout to Host!` | Y |
-| 2 | `db` should NOT be able to ping `iam` on port `80` | `nc -vz 192.168.11.102 PORT: 80` | `nc: connect to 192.168.11.102 PORT: 80 (tcp) failed: No Rout to Host` | `nc: connect to 192.168.11.102 port 80 (tcp) failed: No Rout to Host` | Y |
-| 3 | `web01` should NOT be able to ping `iam01` on port `80` | `nc -vz 192.168.11.102 PORT: 80` | `Connection to 192.168.11.102 PORT: 80 [tcp/http] Failed!` | `No Rout to Host!` | Y |
+| 1 | `web` should be able to ping `db` on port `3306` | `nc -vz 192.168.11.100 PORT: 3306` | `Connection to 192.168.11.100 PORT: 3306 [tcp/mysql] Failed` | `No Route to Host!` | Y |
+| 2 | `db` should NOT be able to ping `iam` on port `80` | `nc -vz 192.168.11.102 PORT: 80` | `nc: connect to 192.168.11.102 PORT: 80 (tcp) failed: No Rout to Host` | `No Route to Host!` | Y |
+| 3 | `web01` should NOT be able to ping `iam01` on port `80` | `nc -vz 192.168.11.102 PORT: 80` | `Connection to 192.168.11.102 PORT: 80 [tcp/http] Failed!` | `No Route to Host!` | Y |
 | 4 | Check if reverse proxy works | Visiting [localhost:8080/](http://localhost:8080/) should show the default apache2 site | Show apache2 default page | Show apache2 default page | Y |
 | 5 | Check if `Adminer` works | Open [localhost:8080/adminer.php](http://localhost:8080/adminer.php) <br>Presents Table to Select Log-In. | Presented with the view to select the `data` table. | Presented with the view to select the `data` table. | Y |
-| 6 | `iam` should NOT be able to ping `db` on port `3306` | `nc -vz 192.168.11.100 PORT: 3306` | `nc: connect to 192.168.11.100 PORT: 3306 (tcp) failed: Connection timed out` | `nc: connect to 192.168.11.100 PORT: 3306 (tcp) failed: Connection timed out` | Y |
+| 6 | `iam` should NOT be able to ping `db` on port `3306` | `nc -vz 192.168.11.100 PORT: 3306` | `nc: connect to 192.168.11.100 PORT: 3306 (tcp) failed: No Route to Host` | ` No Route to Host!` | Y |
 
 
 Adminer.php (http://localhost:8080/adminer.php)
