@@ -76,6 +76,7 @@ ProxyRequests Off
 # redirection to IAM
 ProxyPass /iam http://iam	
 ProxyPassReverse /iam http://iam 
+```
 
 ### Test cases
 | Nr. | Description | Check | Should-Situation | Is-Situation | OK? |
