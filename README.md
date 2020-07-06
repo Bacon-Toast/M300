@@ -65,10 +65,10 @@ Für das Projekt benötige ich Virtual Box, Vagrant und einen funktionalen Lapto
 ### Test cases
 | Nr. | Description | Check | Should-Situation | Is-Situation | OK? |
 |:-:|-|-|-|-|:-:|
-| 1 | `web` should be able to ping `iam` on port `80` | `nc -vz 192.168.11.102 80` | `Connection to 192.168.55.102 80 port [tcp/http] succeeded!` | `Connection to 192.168.55.102 80 port [tcp/http] succeeded!` | Y |
-| 2 | `web` should be able to ping `db` on port `3306` | `nc -vz 192.168.11.100 3306` | `Connection to 192.168.55.100 3306 port [tcp/mysql] succeeded!` | `Connection to 192.168.55.100 3306 port [tcp/mysql] succeeded!` | Y |
-| 3 | `db` should NOT be able to ping `iam` on port `80` | `nc -vz 192.168.11.102 80` | `nc: connect to 192.168.55.102 port 80 (tcp) failed: Connection timed out` | `nc: connect to 192.168.55.102 port 80 (tcp) failed: Connection timed out` | Y |
-| 4 | `iam` should NOT be able to ping `db` on port `3306` | `nc -vz 192.168.11.100 3306` | `nc: connect to 192.168.55.100 port 3306 (tcp) failed: Connection timed out` | `nc: connect to 192.168.55.100 port 3306 (tcp) failed: Connection timed out` | Y |
+| 1 | `web` should be able to ping `iam` on port `80` | `nc -vz 192.168.11.102 80` | `Connection to 192.168.11.102 80 port [tcp/http] succeeded!` | `Connection to 192.168.11.102 80 port [tcp/http] succeeded!` | Y |
+| 2 | `web` should be able to ping `db` on port `3306` | `nc -vz 192.168.11.100 3306` | `Connection to 192.168.11.100 3306 port [tcp/mysql] succeeded!` | `Connection to 192.168.11.100 3306 port [tcp/mysql] succeeded!` | Y |
+| 3 | `db` should NOT be able to ping `iam` on port `80` | `nc -vz 192.168.11.102 80` | `nc: connect to 192.168.11.102 port 80 (tcp) failed: Connection timed out` | `nc: connect to 192.168.11.102 port 80 (tcp) failed: Connection timed out` | Y |
+| 4 | `iam` should NOT be able to ping `db` on port `3306` | `nc -vz 192.168.11.100 3306` | `nc: connect to 192.168.11.100 port 3306 (tcp) failed: Connection timed out` | `nc: connect to 192.168.11.100 port 3306 (tcp) failed: Connection timed out` | Y |
 | 5 | On [web](http://localhost:8080/) anybody should be able to input their name, proposal and press submit.<br>After that the information should be stored in the `proposals/data` on the `db` server. | 1. `mysql -uroot -pS3cr3tp4ssw0rd`<br>2. `use proposals;`<br>3. `SELECT uname, proposal FROM data;` | check if the input values are visible in the list | Input Variables are visible. | Y |
 | 6 | Check if Python backend worked | After some Values are submitted on [web](http://localhost:8080/), they should be displayed under the submit button. | Values are displayed | Values are displayed, after I cleared my browser history. | N |
 | 7 | Check if reverse proxy works | Visiting [localhost:8080/iam](http://localhost:8080/iam) should show the default apache2 site | Show apache2 default page | Show apache2 default page | Y |
