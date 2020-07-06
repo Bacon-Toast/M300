@@ -152,7 +152,7 @@ Adminer.php (http://localhost:8080/adminer.php)
 > <"vagrant destroy"> -->  #Zerstört / löscht die VM
 
 ### Lernfortschritt
-ICh habe viel über Vagrant gelernt, welch ich nicht mal wusste wie es genau funktioniert. Ich fand es sehr gut das wir das Thema bearbeitet hatten. Somit ist das erstellen von VM's einiges EInfacher, da ich nicht jede VM selber beim erstellen konfigurieren muss. 
+Ich habe viel über Vagrant gelernt, welch ich nicht mal wusste wie es genau funktioniert. Ich fand es sehr gut das wir das Thema bearbeitet hatten. Somit ist das erstellen von VM's einiges EInfacher, da ich nicht jede VM selber beim erstellen konfigurieren muss. 
 ### Reflexion
 In diesem Projekt konnte ich viel über die Virtualisierung lernen, und wie es funktionert. Vagrant was am anfang sehr verwirrend, da ich nicht genau verstanden habe, wie ich das Vagrantfile richtig bearbeiten muss. Nachdem ich ein paar examples angeschaut habe, konnte ich festellen, was genau für das Projekt gebraucht wird. Ich habe somit 3 Maschinen erstellt. Web Server / IAM Server / Database Server. Nach dem konnte ich das reverse proxy problem beheben.
 
