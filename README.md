@@ -66,19 +66,9 @@ Für das Projekt benötige ich Virtual Box, Vagrant und einen funktionalen Lapto
 
 
 #### Reverse-Proxy
-The Reverse Proxy is managed in `/etc/apache2/sites-available/001-reverseproxy.conf`:
-```xml
-# general Proxy settings
-ProxyRequests Off
-<Proxy *>
-      Order deny,allow
-      Allow from all
-</Proxy>
+The REverse Proxy is managed by IAM01 Server which allows the Web server to be accessed by outside connection:
+Test connection by calling up http://localhost:8080/
 
-# redirection to IAM
-ProxyPass /iam http://iam	
-ProxyPassReverse /iam http://iam 
-```
 #### Firewall
 | Server | Firewall Rules |
 |:-:|-|
