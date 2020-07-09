@@ -108,10 +108,11 @@ Ein Dockerfile ist eine Textdatei mit einer Reihe von Schritten, die genutzt wer
 Dazu wird zuerst ein Verzeichnis erstellt und darin eine Datei mit Namen "Dockerfile".
 
 ### Elastalert
-Für das Projekt habe ich mit hilfe von docker-compose.yml file einen Multi node Cluster erstellt.
+Für das Projekt habe ich mit hilfe von docker-compose.yml file einen Multi node Cluster erstellt. dieser sollte Information an Kibana weitergeben, welcher unter der adresse (localhost:5601) Dieser ist aber nicht bereit um informationen entgegenzunehmen.
 
 ### Elasticsearch
 Basierend auf Apache Lucene – einer bewährten Such-Engine für Java – stellt Elasticsearch eine Vielzahl von Möglichkeiten für Freitextabfragen, für die Indexierung von Daten, sowie für die Administration über eine HTTP / RESTful Schnittstelle zur Verfügung. Darüber hinaus erweitert Elasticsearch Lucene mit zusätzlichen Features wie Clustering und Monitoring. Auch erweiterte Werkzeuge für die Auswertung und Analyse der indexierten Daten (z.B. Aggregationen) werden zur Verfügung gestellt. Eines der mächtigsten Features ist die Cluster-Fähigkeit von Elasticsearch. Dabei werden die Such-Indizes auf mehrere Elasticsearch-Knoten verteilt, um eine bessere Suchperformance bei grosser Abfragelast sowie bessere Verfügbarkeit und Ausfallsicherheit zu erreichen. Trotz des grossen Funktionsumfanges von Elasticsearch legen die Entwickler viel Wert auf einfache Bedienung. So lässt sich beispielsweise mittels Autodiscovery automatisch ein Such-Cluster formieren: Sobald neue Knoten im Netzwerk vorhanden sind, werden diese automatisch in den Cluster-Verbund aufgenommen.
+
 
 ### Command Sheet
 #### Docker
