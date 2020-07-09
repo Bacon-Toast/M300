@@ -92,6 +92,20 @@ Adminer.php (http://localhost:8080/adminer.php)
   - Username: `root`
   - Password: `admin`
   - Database: `proposals`.
+## LB3
+
+### Docker
+Docker ist eine Software zur Isolierung von Anwendungen mit Containervirtualisierung. Die Software benötigt keine Lizenzen.
+
+Docker nahm damals die bestehende Linux-Containertechnologie auf und verpackte und erweiterte sie in vielerlei Hinsicht – vor allem durch portable Images und eine benutzerfreundliche Schnittstelle.
+
+### Containisierung
+Das Containerkonzept ist eine Virtualisierungstechnik, die Anwendungen auf einem Host-System voneinander isoliert. Im Vergleich zu virtuellen Maschinen werden nicht komplette Rechner inklusive Betriebssystem virtualisiert, sondern nur die zur Ausführung der Anwendungen benötigten Laufzeitumgebungen mit ihren Ressourcen wie Anwendungscode, Bibliotheken oder Konfigurationen. Das Containerformat ist genau definiert. Container inklusive ihrer Anwendungen und Laufzeitumgebung lassen sich in Form einer Datei leicht auf andere Host-Systeme übertragen.
+
+### Dockerfile 
+Ein Dockerfile ist eine Textdatei mit einer Reihe von Schritten, die genutzt werden können, um ein Docker-Image zu erzeugen.
+
+Dazu wird zuerst ein Verzeichnis erstellt und darin eine Datei mit Namen "Dockerfile".
 
 ### Command Sheet
 #### Docker
