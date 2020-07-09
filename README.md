@@ -76,7 +76,7 @@ Test connection by calling up http://localhost:8080/
 | iam01 | sudo ufw allow 22/tcp<br>sudo ufw allow from 192.168.11.101 to any port 80 |
 | db01 | sudo ufw allow 22/tcp<br>sudo ufw allow from 192.168.11.101 to any port 3306 |
 
-### Test cases
+### Test cases LB2
 | Nr. | Beschreibung | Check | Soll Stand | Ist Stand | OK? |
 |:-:|-|-|-|-|:-:|
 | 1 | `web` should be able to ping `db` on port `3306` | `nc -vz 192.168.11.100 PORT: 3306` | `Connection to 192.168.11.100 PORT: 3306 [tcp/mysql] Failed` | `No Route to Host!` | Y |
@@ -113,6 +113,12 @@ Für das Projekt habe ich mit hilfe von docker-compose.yml file einen Multi node
 ### Elasticsearch
 Basierend auf Apache Lucene – einer bewährten Such-Engine für Java – stellt Elasticsearch eine Vielzahl von Möglichkeiten für Freitextabfragen, für die Indexierung von Daten, sowie für die Administration über eine HTTP / RESTful Schnittstelle zur Verfügung. Darüber hinaus erweitert Elasticsearch Lucene mit zusätzlichen Features wie Clustering und Monitoring. Auch erweiterte Werkzeuge für die Auswertung und Analyse der indexierten Daten (z.B. Aggregationen) werden zur Verfügung gestellt. Eines der mächtigsten Features ist die Cluster-Fähigkeit von Elasticsearch. Dabei werden die Such-Indizes auf mehrere Elasticsearch-Knoten verteilt, um eine bessere Suchperformance bei grosser Abfragelast sowie bessere Verfügbarkeit und Ausfallsicherheit zu erreichen. Trotz des grossen Funktionsumfanges von Elasticsearch legen die Entwickler viel Wert auf einfache Bedienung. So lässt sich beispielsweise mittels Autodiscovery automatisch ein Such-Cluster formieren: Sobald neue Knoten im Netzwerk vorhanden sind, werden diese automatisch in den Cluster-Verbund aufgenommen.
 
+### Test cases LB3
+| Nr. | Beschreibung | Check | Soll Stand | Ist Stand | OK? |
+|:-:|-|-|-|-|:-:|
+| 1 | `docker-compose up should start up the compose file and start the node cluster | sudo docker-compose up | `kb01 node is running` | `kb01 node is running but cannot connect to net` | Y |
+| 2 | `docker compose should set up kibana server` | `sudo docker-compose up` | `Kibana Server is running via (localhost:5601)` | `Kibana server can connect but doesn't display any info` | Y |
+| 3 | `docker containers should be runni g from tests` | `docker build .` | `docker containers are running images used in experiment` | `docker containers are running images used in experiment` | Y |
 
 ### Command Sheet
 #### Docker
