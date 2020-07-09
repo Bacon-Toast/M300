@@ -119,6 +119,7 @@ Basierend auf Apache Lucene – einer bewährten Such-Engine für Java – stell
 | 1 | `docker-compose up should start up the compose file and start the node cluster | sudo docker-compose up | `kb01 node is running` | `kb01 node is running but cannot connect to net` | Y |
 | 2 | `docker compose should set up kibana server` | `sudo docker-compose up` | `Kibana Server is running via (localhost:5601)` | `Kibana server can connect but doesn't display any info` | Y |
 | 3 | `docker containers should be runni g from tests` | `docker build .` | `docker containers are running images used in experiment` | `docker containers are running images used in experiment` | Y |
+| 4 | nginx webserver should work | sudo docker build . | Starterpage for nginx is should show by calling up (localhost:8080)  | nginx starter webpage is displyed when calling up (localhost:8080) | Y |
 
 ### Command Sheet
 #### Docker
