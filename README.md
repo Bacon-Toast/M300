@@ -165,8 +165,14 @@ Dazu wird zuerst ein Verzeichnis erstellt und darin eine Datei mit Namen "Docker
 
 > <"vagrant destroy"> -->  #Zerstört / löscht die VM
 
-### Lernfortschritt
+### Lernfortschritt LB2
 Ich habe viel über Vagrant gelernt, welch ich nicht mal wusste wie es genau funktioniert. Ich fand es sehr gut das wir das Thema bearbeitet hatten. Somit ist das erstellen von VM's einiges EInfacher, da ich nicht jede VM selber beim erstellen konfigurieren muss. 
-### Reflexion
+### Reflexion LB2
 In diesem Projekt konnte ich viel über die Virtualisierung lernen, und wie es funktionert. Vagrant was am anfang sehr verwirrend, da ich nicht genau verstanden habe, wie ich das Vagrantfile richtig bearbeiten muss. Nachdem ich ein paar examples angeschaut habe, konnte ich festellen, was genau für das Projekt gebraucht wird. Ich habe somit 3 Maschinen erstellt. Web Server / IAM Server / Database Server. Nach dem konnte ich das reverse proxy problem beheben.
 
+### Lernfortschritt LB3
+Ich habe in der LB3 viel über die Containisierung gelernt. Ich konnte dieses Wissen somit auch in meinem Betrieb anwenden. Ich habe somit eine Golang Rest API ertellt.
+Das umsetzen der Docker Theorie war ein sehr grosser Vorteil. 
+
+### Reflexion LB3
+In diesem Projekt konnte ich viel über das Docker Container System lernen, welches 
